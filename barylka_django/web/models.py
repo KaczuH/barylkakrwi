@@ -59,7 +59,7 @@ admin.site.register(DonationEntry)
 class Donation(models.Model):
     donor = models.ForeignKey(User, related_name="donate")
     date = models.DateTimeField()
-    type = models.CharField(max_length=10, choices=DONATION_TYPE)
+    donation_type = models.CharField(max_length=10, choices=DONATION_TYPE)
     value = models.IntegerField()
     entry = models.ForeignKey(DonationEntry)
     stamp_img_url = models.CharField(max_length=2048)
